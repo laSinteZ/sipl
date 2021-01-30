@@ -13,6 +13,7 @@ await downloadPostsOfUser(%profile_username%)
 ```
 
 TODO: 
+- [ ] Figure out, why script hangs sometimes
 - [ ] Write some tests (lol)
 - [x] CLI
 - [ ] Ignore or download videos
