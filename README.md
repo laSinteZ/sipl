@@ -1,4 +1,4 @@
-# SIPL ![sipl](https://img.shields.io/npm/v/sipl)
+# SIPL [![sipl](https://img.shields.io/npm/v/sipl)](https://www.npmjs.com/package/sipl)
 Simple Instagram Photos Loader
 
 CLI usage:
