@@ -133,16 +133,22 @@ async function downloadImage(file: SaveObject, pathToFolder: string): Promise<an
   fs.writeFileSync(path, newJpeg);
 }
 
-function createFolderIfPossible(path: string) {
+function createFolderIfPossible(path: string): void {
   if (!fs.existsSync(path)) {
     fs.mkdirSync(path);
   }
+}
+
+function removeAtSymbol(username: string): string {
+  return username.indexOf("@") === 0 ? username.slice(1) : username;
 }
 
 // TODO: Recover if fails
 // TODO: Process errors
 // TODO: deal with videos. either filter or download them.
 export async function downloadPostsOfUser(username: string) {
+  username = removeAtSymbol(username);
+
   console.log(`Fetching all posts of @${username}`)
   const links = await fetchPostShortLinks(username);
   console.log(`Processing ${links.length} posts`);
