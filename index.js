@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 // TODO: proper cli
 const { downloadPostsOfUser } = require("./dist");
 const username = process.argv.slice(2)[0];
