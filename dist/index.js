@@ -105,10 +105,14 @@ function createFolderIfPossible(path) {
         fs_1.default.mkdirSync(path);
     }
 }
+function removeAtSymbol(username) {
+    return username.indexOf("@") === 0 ? username.slice(1) : username;
+}
 // TODO: Recover if fails
 // TODO: Process errors
 // TODO: deal with videos. either filter or download them.
 async function downloadPostsOfUser(username) {
+    username = removeAtSymbol(username);
     console.log(`Fetching all posts of @${username}`);
     const links = await fetchPostShortLinks(username);
     console.log(`Processing ${links.length} posts`);

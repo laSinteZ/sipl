@@ -1,11 +1,12 @@
 {
   "name": "sipl",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Simple Instagram Photos Loader",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "publish": "npm run build && npm publish"
   },
   "author": "Vyacheslav Bikbaev <la.sintez@gmail.com>",
   "license": "MIT",
