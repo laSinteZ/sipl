@@ -1,15 +1,23 @@
-# SIPL
-Simple Instagram Profile Loader
+# SIPL ![sipl](https://img.shields.io/npm/v/sipl)
+Simple Instagram Photos Loader
 
-1. Pass post id-s to `process` function.
-2. run `process` function.
-3. profit.
+CLI usage:
+```
+npx sipl %profile_username%
+```
+
+Programmatic usage:
+```
+import { downloadPostsOfUser } from "sipl/dist"
+await downloadPostsOfUser(%profile_username%)
+```
 
 TODO: 
 - [ ] Write some tests (lol)
 - [x] CLI
+- [ ] Ignore or download videos
 - [x] Get post links automatically from profile
 - [ ] PROPER CLI with command-line arguments parsing
 - [ ] Allow programmatic usage
 - [ ] Friendly errors
-- [ ] Recover from (some) errors\
+- [ ] Recover from (some) errors

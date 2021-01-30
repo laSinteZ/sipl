@@ -1,7 +1,7 @@
 {
   "name": "sipl",
-  "version": "0.1.1",
-  "description": "Simple instagram profile loader",
+  "version": "0.1.2",
+  "description": "Simple Instagram Photos Loader",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "cli-progress": "^3.8.2",
     "date-fns": "^2.16.1",
     "lodash.uniqby": "^4.7.0",
-    "piexifjs": "^1.0.6"
+    "piexifjs": "^1.0.6",
+    "tslib": "^2.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.1.1",
