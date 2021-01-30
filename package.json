@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Simple instagram profile loader",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rollup -c"
+  },
   "author": "Vyacheslav Bikbaev",
   "license": "MIT",
   "dependencies": {
@@ -14,10 +16,13 @@
     "piexifjs": "^1.0.6"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.1.1",
     "@types/cli-progress": "^3.8.0",
     "@types/lodash.uniqby": "^4.7.6",
     "@types/node": "^14.14.22",
+    "rollup": "^2.38.1",
     "ts-node": "^9.1.1",
+    "tslib": "^2.1.0",
     "typescript": "^4.1.3"
   }
 }

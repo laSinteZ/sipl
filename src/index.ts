@@ -141,6 +141,7 @@ function createFolderIfPossible(path: string) {
 
 // TODO: Recover if fails
 // TODO: Process errors
+// TODO: deal with videos. either filter or download them.
 export async function downloadPostsOfUser(username: string) {
   console.log(`Fetching all posts of @${username}`)
   const links = await fetchPostShortLinks(username);
