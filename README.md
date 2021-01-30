@@ -7,5 +7,7 @@ Simple Instagram Profile Loader
 
 TODO: 
 - [ ] Write some tests (lol)
-- [ ] CLI
-- [ ] Get post links automatically from profile
+- [x] CLI
+- [x] Get post links automatically from profile
+- [ ] PROPER CLI with command-line arguments parsing
+- [ ] Allow programmatic usage

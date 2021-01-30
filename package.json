@@ -1,8 +1,9 @@
 {
   "name": "sipl",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple instagram profile loader",
   "main": "index.js",
+  "bin": "./index.js",
   "scripts": {
     "build": "rollup -c"
   },
