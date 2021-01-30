@@ -11,3 +11,5 @@ TODO:
 - [x] Get post links automatically from profile
 - [ ] PROPER CLI with command-line arguments parsing
 - [ ] Allow programmatic usage
+- [ ] Friendly errors
+- [ ] Recover from (some) errors\
