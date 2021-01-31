@@ -110,27 +110,32 @@ function getLinkAndName(files: MediaNode[]): SaveObject[] {
   });
 }
 
-async function downloadImage(file: SaveObject, pathToFolder: string): Promise<any> {
+async function downloadAndSaveImage(file: SaveObject, pathToFolder: string): Promise<any> {
   const { src, name } = file;
   const path = resolve(pathToFolder, name + ".jpg");
 
   const response = await axios.get<ArrayBuffer>(src, {
     responseType: "arraybuffer",
   });
+
   if (!response?.data) {
     return;
   }
 
   // TODO: write more exif data?
-  const jpeg = Buffer.from(response.data);
+  const newJpeg = modifyExifOfJpg(response.data, file);
+  fs.writeFileSync(path, newJpeg);
+}
+
+  // TODO: write more exif data?
+function modifyExifOfJpg(file: ArrayBuffer, fileMetaData: SaveObject): Buffer {
+  const jpeg = Buffer.from(file);
   const data = jpeg.toString("binary");
   const exifObj = piexif.load(data);
-  exifObj.Exif[piexif.ExifIFD.DateTimeOriginal] = file.exif.DateTimeOriginal;
+  exifObj.Exif[piexif.ExifIFD.DateTimeOriginal] = fileMetaData.exif.DateTimeOriginal;
   const exifbytes = piexif.dump(exifObj);
   const newData = piexif.insert(exifbytes, data);
-  const newJpeg = Buffer.from(newData, "binary");
-
-  fs.writeFileSync(path, newJpeg);
+  return Buffer.from(newData, "binary");
 }
 
 function createFolderIfPossible(path: string): void {
@@ -173,7 +178,7 @@ export async function downloadPostsOfUser(username: string) {
 
   // Doing it in sync fashion. TODO: async?
   for (let i = 0; i < files.length; i++) {
-    await downloadImage(files[i], pathToFolder);
+    await downloadAndSaveImage(files[i], pathToFolder);
     progressBar.update(i + 1);
   }
 
