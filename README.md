@@ -1,4 +1,9 @@
+<div align="center">
+  <img src="https://github.com/laSinteZ/sipl/raw/HEAD/logo.svg" width="650" height="auto"/>
+</div>
+
 # SIPL [![sipl](https://img.shields.io/npm/v/sipl)](https://www.npmjs.com/package/sipl)
+
 Simple Instagram Photos Loader
 
 CLI usage:
